@@ -5,6 +5,7 @@ using UnityEngine;
 public class flyzeliafly : MonoBehaviour
 {
     public float velocity = 1;
+    
 
     private Rigidbody2D rb;
     // Start is called before the first frame update
@@ -14,11 +15,19 @@ public class flyzeliafly : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void OnMouseDown()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            rb.velocity = Vector2.up * velocity;
-        }
+        rb.velocity = Vector2.up * velocity;
+        
+        var pos = Input.mousePosition;
+        pos.z = transform.position.z;
+        pos = Camera.main.ScreenToWorldPoint(pos);
+        pos = transform.InverseTransformPoint(pos);
+        
+        Vector2 vec;
+        
+        vec = new Vector2(-pos[0], 1);
+        
+        rb.velocity = vec * velocity;
     }
 }
