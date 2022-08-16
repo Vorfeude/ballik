@@ -34,5 +34,14 @@ public class flyzeliafly : MonoBehaviour
         vec = new Vector2(-pos[0], 1); //Гений, даже ВС код выделил
         
         rb.velocity = vec * velocity;
+
     }
+
+    void Update() {
+        if (rb.position.y < -10f){
+            FindObjectOfType<GameManager>().GameOver();
+        }
+    }
+
+
 }
