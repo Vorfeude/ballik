@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 		if (ended == false) {
 			ended = true;
 			Restart();
-			FindObjectOfType<ForLoosersToWatch>().ShowAd();
+			FindObjectOfType<InterstitialAds>().ShowAd();
 		}
 	}
 	
