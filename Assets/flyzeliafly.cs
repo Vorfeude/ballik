@@ -19,7 +19,7 @@ public class flyzeliafly : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         int gameScore = 0;
-		gameText.text = "Can you go beat me?";
+		gameText.text = "Beat me";
 		FindObjectOfType<typewriterUI>().Start();
 
     }
